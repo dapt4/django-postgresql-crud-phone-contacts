@@ -1,0 +1,35 @@
+{% extends 'base.html'%} 
+{% block title %} Edit Contact {% endblock %} 
+{% block content %}
+
+<div class="card col-md-6 mx-auto mt-5">
+  <div class="card-header">Editar contacto</div>
+  <div class="card-body">
+    <form action="{% url 'edit' dato.dato_id %}" method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="nombre"
+          value="{{ dato.nombre }}"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="numero" class="form-label">Numero: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="numero"
+          name="numero"
+          value="{{ dato.numero }}"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

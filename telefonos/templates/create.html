@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block title %} Create Contact {% endblock %}
+{% block content %}
+
+<div class="card col-md-6 mx-auto mt-5">
+  <div class="card-header">Crear contacto</div>
+  <div class="card-body">
+    <form action="{% url 'create' %}" method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre: </label>
+        <input type="text" class="form-control" id="name" name="nombre">
+      </div>
+      <div class="mb-3">
+        <label for="numero" class="form-label">Numero: </label>
+        <input type="text" class="form-control" id="numero" name="numero">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

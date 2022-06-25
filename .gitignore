@@ -1,0 +1,5 @@
+venv/
+.env
+user.txt
+session.nvim
+
